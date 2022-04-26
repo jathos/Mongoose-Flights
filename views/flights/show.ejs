@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Mongoose Movies</title>
+</head>
+<header>
+    <a href="/" class="links">Home</a>
+    <a href="/flights" class="links">See All Flights</a>
+    <a href="/flights/new" class="links">Add Flight</a>
+</header>
+
+<body>
+    <section id="show-page">
+        <h4>
+            Airline: <%= flight.airline %>
+        </h4>
+        <h4>
+            Airport: <%= flight.airport %>
+        </h4>
+        <h4>
+            Flight Number: <%= flight.flightNo %>
+        </h4>
+        <h4>
+            Departs: <%= flight.departs %>
+        </h4>
+        <h4>Destination(s):
+            <% if (flight.destinations.length) { %>
+                <% flight.destinations.forEach(function(ele) { %>
+                    <%= ele.airport %>
+        </h4>
+        <% }); %>
+            <% } else { %>
+                No Destinations Added
+                </h4>
+                <% } %>
+    </section>
+    <form id="add-review-form" method="POST" action="/flights/<%= flight._id %>">
+        <label>Add A Destination</label>
+        <select name="destination">
+            <option value="AUS" selected>AUS</option>
+            <option value="DFW">DFW</option>
+            <option value="DEN">DEN</option>
+            <option value="LAX">LAX</option>
+            <option value="SAN">SAN</option>
+        </select>
+        <input type="submit" value="Add Destination">
+    </form>
+</body>
+
+</html>
