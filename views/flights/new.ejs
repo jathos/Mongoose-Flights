@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Mongoose Movies</title>
+</head>
+<header>
+    <a href="/" class="links">Home</a>
+    <a href="/flights" class="links">See All Flights</a>
+    <a href="/flights/new" class="links">Add Flight</a>
+</header>
+
+
+<body>
+    <form id="new-form" action="/flights" method="POST">
+        <label>Airline</label>
+        <input type="text" name="airline">
+        <label>Airport</label>
+        <select name="airport">
+            <option value="AUS">AUS</option>
+            <option value="DFW">DFW</option>
+            <option value="DEN">DEN</option>
+            <option value="LAX">LAX</option>
+            <option value="SAN">SAN</option>
+        </select>
+        <label>Flight No.</label>
+        <input type="text" name="flightNo">
+        <label>Departure Date</label>
+        <input type="datetime-local" name="departs">
+        <input type="submit" value="Add Flight">
+    </form>
+</body>
+
+</html>

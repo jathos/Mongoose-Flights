@@ -6,3 +6,28 @@ body {
 a {
   color: #00B7FF;
 }
+
+header {
+  background: #d8e2ed;
+  display: flex;
+  height: 75px;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 0px;
+  justify-content: center;
+}
+
+.links {
+  font-size: 14pt;
+  margin: 5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  font-size: 12pt;
+}
