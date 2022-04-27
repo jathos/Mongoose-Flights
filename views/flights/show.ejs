@@ -41,9 +41,33 @@
                         No Destinations Added
                         </h4>
                         <% } %>
+                            <h4>
+                                Tickets:
+                            </h4>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td>Seat</td>
+                                        <td>Price</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% tickets.forEach(function(ele) { %>
+                                        <tr>
+                                            <td>
+                                                <%= tickets.seat %>
+                                            </td>
+                                            <td>
+                                                <%= tickets.price %>
+                                            </td>
+                                        </tr>
+                                        <% }) %>
+                                </tbody>
+                            </table>
     </section>
+    <a href="/tickets/<%= flight._id %>">Add A New Ticket</a>
     <form id="add-review-form" method="POST" action="/flights/<%= flight._id%>/destinations">
-        <label>Add A Destination</label>
+        <label>Add A Destination:</label>
         <select name="airport">
             <option value="AUS" selected>AUS</option>
             <option value="DFW">DFW</option>
