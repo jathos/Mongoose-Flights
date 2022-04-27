@@ -1,4 +1,3 @@
-const flight = require('../models/flight');
 const Flight = require('../models/flight');
 
 module.exports = {

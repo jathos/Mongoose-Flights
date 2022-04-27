@@ -28,20 +28,23 @@
         <h4>
             Departs: <%= flight.departs %>
         </h4>
-        <h4>Destination(s):
-            <% if (flight.destinations.length) { %>
-                <% flight.destinations.forEach(function(ele) { %>
-                    <%= ele.airport %>
+        <h4>
+            Destination(s):
         </h4>
-        <% }); %>
-            <% } else { %>
-                No Destinations Added
+        <% if (flight.destinations.length) { %>
+            <% flight.destinations.forEach(function(ele) { %>
+                <h4>
+                    <%= ele.airport %>
                 </h4>
-                <% } %>
+                <% }); %>
+                    <% } else { %>
+                        No Destinations Added
+                        </h4>
+                        <% } %>
     </section>
-    <form id="add-review-form" method="POST" action="/flights/<%= flight._id %>">
+    <form id="add-review-form" method="POST" action="/flights/<%= flight._id%>/destinations">
         <label>Add A Destination</label>
-        <select name="destination">
+        <select name="airport">
             <option value="AUS" selected>AUS</option>
             <option value="DFW">DFW</option>
             <option value="DEN">DEN</option>
