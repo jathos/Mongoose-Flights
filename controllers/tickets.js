@@ -13,7 +13,7 @@ function addToFlight(req, res) {
     newTicket.save(function (err) {
         Flight.findById(req.params.id, function (err, flight) {
             res.render('flights/show', {
-                flight, tickets: newTicket
+                flight, tickets: Ticket
             });
         });
     });

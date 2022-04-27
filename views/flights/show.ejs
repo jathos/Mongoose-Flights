@@ -52,14 +52,16 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <%= tickets.seat %>
-                                        </td>
-                                        <td>
-                                            <%= tickets.price %>
-                                        </td>
-                                    </tr>
+                                    <% tickets.forEach(function(ele) { %>
+                                        <tr>
+                                            <td>
+                                                <%= ele.seat %>
+                                            </td>
+                                            <td>
+                                                <%= ele.price %>
+                                            </td>
+                                        </tr>
+                                        <% }) %>
                                 </tbody>
                             </table>
     </section>
